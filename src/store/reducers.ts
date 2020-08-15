@@ -1,12 +1,12 @@
+import { initStore } from '@store/defaultStore';
 import { INCREMENT, DECREMENT } from './actions';
-import {initStore} from "@store/store";
 
 export interface Action {
   type: string;
   payload?: any;
 }
 
-export const counterReducer = <CounterReducer>(state = initStore, action: Action) => {
+export const counterReducer = (state = initStore, action: Action) => {
   switch (action.type) {
     case INCREMENT:
       return {
