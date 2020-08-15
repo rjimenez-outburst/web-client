@@ -10,10 +10,18 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "redux": "^4.0.5",
+    "redux-promise": "^0.6.0",
+    "simple-peer": "9.6.2",
+    "sockette": "^2.0.5",
+    "typescript": "~3.7.2",
+    "uuid": "^8.2.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -23,8 +31,7 @@
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
-    "isready": "yarn format && yarn lint && yarn build",
-    "pre-commit" : "yarn lint && yarn format"
+    "isready": "yarn format && yarn lint && yarn build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -63,10 +70,5 @@
     "prettier-eslint-cli": "^5.0.0",
     "react-app-rewire-alias": "^0.1.6",
     "react-app-rewired": "^2.1.6"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "pre-commit"
-    }
   }
 }
