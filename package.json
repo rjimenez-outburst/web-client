@@ -32,8 +32,9 @@
     "eject": "react-scripts eject",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx src --color --fix",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
-    "format": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
-    "isready": "yarn format && yarn lint && yarn build"
+    "format": "prettier 'src/**/*.{ts,tsx,scss,css,json}'",
+    "format:fix": "prettier --write 'src/**/*.{ts,tsx,scss,css,json}'",
+    "typecheck": "tsc --project . --noEmit"
   },
   "eslintConfig": {
     "extends": "react-app"

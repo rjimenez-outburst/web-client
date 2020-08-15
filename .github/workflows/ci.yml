@@ -1,0 +1,43 @@
+name: AWS Deployment
+
+on:
+  push:
+    branches:
+      - '**' # Only trigger on branch push, ignore tag pushes (like a release)
+
+  release:
+    types: [published]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.13.1'
+      - run: CYPRESS_INSTALL_BINARY=0 npm i --production=false
+      - run: npm run lint -- --max-warnings=0
+
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.13.1'
+      - run: CYPRESS_INSTALL_BINARY=0 npm i --production=false
+      - run: npm run format
+
+  typecheck:
+    name: Typecheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.13.1'
+      - run: CYPRESS_INSTALL_BINARY=0 npm i --production=false
+      - run: npm run typecheck
